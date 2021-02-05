@@ -6,7 +6,7 @@ from .views import PrescriptionIndex
 
 urlpatterns = [
     path('', PrescriptionIndex.as_view(), name='index'),
-    path('create/patient', '', name='create_patient'),
-    path('create/doctor', '', name='create_doctor'),
-    path('create/prescription', '', name='create_prescription'),
+    path('create/patient', CreatePatient.as_view(), name='create_patient'),
+    path('create/doctor', CreateDoctor.as_view(), name='create_doctor'),
+    path('create/prescription', CreatePrescription.as_view(), name='create_prescription'),
 ]
