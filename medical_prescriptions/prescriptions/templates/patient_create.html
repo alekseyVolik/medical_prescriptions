@@ -9,12 +9,12 @@
         <h1>Главная страница</h1>
         <nav>
             <ul>
-                <li><a href="#">Главная</a></li>
+                <li><a href="{% url 'index' %}">Главная</a></li>
                 <li><a href="#">Создать</a>
                     <ul>
-                        <li><a href="#">Пациент</a></li>
-                        <li><a href="#">Доктор</a></li>
-                        <li><a href="#">Реценпт</a></li>
+                        <li><a href="{% url 'create_patient' %}">Пациент</a></li>
+                        <li><a href="{% url 'create_doctor' %}">Доктор</a></li>
+                        <li><a href="{% url 'create_prescription' %}">Реценпт</a></li>
                     </ul>
                 </li>
                 <li><a>Просмотр</a>
