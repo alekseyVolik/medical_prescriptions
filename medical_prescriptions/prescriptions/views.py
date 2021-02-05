@@ -1,6 +1,7 @@
 from .models import Patient, Doctor, Prescription
 from django.views.generic import CreateView
 from django.views.generic.base import TemplateView
+from django.urls import reverse_lazy
 
 
 class CreatePatient(CreateView):
@@ -20,7 +21,7 @@ class CreateDoctor(CreateView):
 class CreatePrescription(CreateView):
     model = Prescription
     fields = ('description', 'patient', 'doctor', 'validity', 'priority')
-    template_name = '_create'
+    template_name_suffix = '_create'
     success_url = ''
 
 
