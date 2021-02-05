@@ -25,4 +25,4 @@ class CreatePrescription(CreateView):
 
 
 class PrescriptionIndex(TemplateView):
-    template_name = ''
+    template_name = 'prescription/index.html'
