@@ -5,6 +5,37 @@
     <title>{% block title %}Главная{% endblock %} - Доская объявлений</title>
 </head>
 <body>
-
+    <header>
+        <h1>Главная страница</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Создать</a>
+                    <ul>
+                        <li><a href="#">Пациент</a></li>
+                        <li><a href="#">Доктор</a></li>
+                        <li><a href="#">Реценпт</a></li>
+                    </ul>
+                </li>
+                <li><a>Просмотр</a>
+                    <ul>
+                        <li><a href="#">Пациент</a></li>
+                        <li><a href="#">Доктор</a></li>
+                        <li><a href="#">Рецепт</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div>
+            <h2>Создать пациента</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Создать">
+            </form>
+        </div>
+    </section>
 </body>
 </html>
