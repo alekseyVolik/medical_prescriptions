@@ -1,5 +1,6 @@
 from .models import Patient, Doctor, Prescription
 from django.views.generic import CreateView
+from django.views.generic.base import TemplateView
 
 
 class CreatePatient(CreateView):
@@ -21,3 +22,7 @@ class CreatePrescription(CreateView):
     fields = ('description', 'patient', 'doctor', 'validity', 'priority')
     template_name = '_create'
     success_url = ''
+
+
+class PrescriptionIndex(TemplateView):
+    template_name = ''
