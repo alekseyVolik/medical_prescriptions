@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>{% block h1 %}{% endblock %}</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Главная</a></li>
+                <li>Создать
+                    <ul>
+                        <li><a href="{% url 'create_patient' %}">Пациент</a></li>
+                        <li><a href="{% url 'create_doctor' %}">Доктор</a></li>
+                        <li><a href="{% url 'create_prescription' %}">Реценпт</a></li>
+                    </ul>
+                </li>
+                <li>Просмотр
+                    <ul>
+                        <li><a href="{% url 'show_patients'%}">Пациент</a></li>
+                        <li><a href="{% url 'show_doctors' %}}">Доктор</a></li>
+                        <li><a href="{% url 'show_prescriptions' %}}">Рецепт</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        {% block main_section %}{% endblock %}
+    </section>
+</body>
+</html>
