@@ -1,34 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
-    <title>Главная - Медецинские рецепты</title>
-</head>
-<body>
-    <header>
-        <h1>Главная страница</h1>
-        <nav>
-            <ul>
-                <li><a href="{% url 'index' %}">Главная</a></li>
-                <li>Создать
-                    <ul>
-                        <li><a href="{% url 'create_patient' %}">Пациент</a></li>
-                        <li><a href="{% url 'create_doctor' %}">Доктор</a></li>
-                        <li><a href="{% url 'create_prescription' %}">Реценпт</a></li>
-                    </ul>
-                </li>
-                <li>Просмотр
-                    <ul>
-                        <li><a href="#">Пациент</a></li>
-                        <li><a href="#">Доктор</a></li>
-                        <li><a href="#">Рецепт</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        <p>Добрый день!</p>
-    </section>
-</body>
-</html>
+{% extends "base/base_template.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block h1 %}Медецинские рецепты - Главная{% endblock %}
+
+{% block main_section %}
+<p>Добро пожаловать!</p>
+{% endblock %}

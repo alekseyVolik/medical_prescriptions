@@ -1,41 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
-    <title>Создать - Пациент</title>
-</head>
-<body>
-    <header>
-        <h1>Создать</h1>
-        <nav>
-            <ul>
-                <li><a href="{% url 'index' %}">Главная</a></li>
-                <li>Создать
-                    <ul>
-                        <li><a href="{% url 'create_patient' %}">Пациент</a></li>
-                        <li><a href="{% url 'create_doctor' %}">Доктор</a></li>
-                        <li><a href="{% url 'create_prescription' %}">Реценпт</a></li>
-                    </ul>
-                </li>
-                <li>Просмотр
-                    <ul>
-                        <li><a href="#">Пациент</a></li>
-                        <li><a href="#">Доктор</a></li>
-                        <li><a href="#">Рецепт</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        <div>
-            <h2>Создать пациента</h2>
-            <form method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <input type="submit" value="Создать">
-            </form>
-        </div>
-    </section>
-</body>
-</html>
+{% extends "base/base_template.html" %}
+
+{% block title %}Создание пациента{% endblock %}
+
+{% block h1 %}Создание пациента{% endblock %}
+
+{% block main_section %}
+<div>
+    <h2>Создать пациента</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Создать">
+    </form>
+</div>
+{% endblock %}
