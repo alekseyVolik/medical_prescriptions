@@ -2,6 +2,7 @@ from .models import Patient, Doctor, Prescription
 from django.views.generic import CreateView
 from django.views.generic.base import TemplateView
 from django.urls import reverse_lazy
+from django.views.generic.list import ListView
 
 
 class CreatePatient(CreateView):
@@ -27,3 +28,15 @@ class CreatePrescription(CreateView):
 
 class PrescriptionIndex(TemplateView):
     template_name = 'prescriptions/index.html'
+
+
+class Patients(ListView):
+    model = Patient
+
+
+class Doctors(ListView):
+    model = Doctor
+
+
+class Prescriptions(ListView):
+    model = Prescription
