@@ -1,0 +1,23 @@
+{% extends "base/base_template.html" %}
+
+{% block title %}Просмотр: пациенты{% endblock %}
+
+{% block h1 %}Пациенты{% endblock %}
+
+{% block main_section %}
+<div>
+    <p>Список пациентов:</p>
+    {% for patient in patient_list %}
+    <p>
+        {{ patient.first_name }}<br>
+        {{ patient.last_name }}<br>
+        {{ patient.father_name }}<br>
+        {{ patient.phone_number }}
+    </p>
+    {% empty %}
+    <p>
+        Записи отсутствуют!
+    </p>
+    {% endfor %}
+</div>
+{% endblock %}

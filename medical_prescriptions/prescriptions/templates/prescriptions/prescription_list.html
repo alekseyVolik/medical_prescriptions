@@ -1,0 +1,25 @@
+{% extends "base/base_template.html" %}
+
+{% block title %}Просмотр: рецепты{% endblock %}}
+
+{% block h1 %}Рецепты{% endblock %}
+
+{% block main_section %}
+<div>
+    <p>Список рецептов:</p>
+    {% for prescription in prescriptions_list %}
+    <p>
+        {{ prescription.description }}<br>
+        {{ prescription.patient }}<br>
+        {{ prescription.doctor }}<br>
+        {{ prescription.create_date }}<br>
+        {{ prescription.validity }}<br>
+        {{ prescription.priority }}
+    </p>
+    {% empty %}
+    <p>
+        Записи отсутсвуют!
+    </p>
+    {% endfor %}
+</div>
+{% endblock %}

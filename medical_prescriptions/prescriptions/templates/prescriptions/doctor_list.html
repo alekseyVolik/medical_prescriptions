@@ -1,0 +1,23 @@
+{% extends "base/base_template.html" %}
+
+{% block title %}Просмотр: доктора{% endblock %}
+
+{% block h1 %}Доктора{% endblock %}
+
+{% block main_section %}
+<div>
+    <p>Список докторов:</p>
+    {% for doctor in doctor_list %}
+    <p>
+        {{ doctor.first_name }}<br>
+        {{ doctor.last_name }}<br>
+        {{ doctor.father_name }}<br>
+        {{ doctor.specialization }}
+    </p>
+    {% empty %}
+    <p>
+        Записи отсутствуют!
+    </p>
+    {% endfor %}
+</div>
+{% endblock %}
