@@ -1,8 +1,9 @@
 from .models import Patient, Doctor, Prescription
 from django.views.generic import CreateView
 from django.views.generic.base import TemplateView
-from django.urls import reverse_lazy
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+from django.urls import reverse_lazy
 
 
 class CreatePatient(CreateView):
@@ -39,4 +40,16 @@ class Doctors(ListView):
 
 
 class Prescriptions(ListView):
+    model = Prescription
+
+
+class DetailPatient(DetailView):
+    model = Patient
+
+
+class DetailDoctor(DetailView):
+    model = Doctor
+
+
+class DetailPrescription(DetailView):
     model = Prescription
