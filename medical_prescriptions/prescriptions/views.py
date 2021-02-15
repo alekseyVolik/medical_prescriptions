@@ -50,6 +50,13 @@ class DetailPatient(DetailView):
 class DetailDoctor(DetailView):
     model = Doctor
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        doctor = context['doctor']
+        amount_prescriptions = doctor.prescription_set.count()
+        context['amount_prescriptions'] = amount_prescriptions
+        return context
+
 
 class DetailPrescription(DetailView):
     model = Prescription

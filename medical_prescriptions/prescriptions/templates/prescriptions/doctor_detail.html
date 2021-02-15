@@ -7,5 +7,10 @@
 {% block main_section %}
 <div>
     <p>Сведения о докторе</p>
+    <p>
+        ФИО: <b>{{doctor.first_name}} {{ doctor.last_name }} {{ doctor.father_name }}</b><br>
+        Специализация: <b>{{ doctor.specialization }}</b><br>
+        Количество выписанных рецептов: <b>{{ amount_prescriptions }}</b>
+    </p>
 </div>
 {% endblock %}
