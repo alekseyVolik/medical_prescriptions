@@ -9,10 +9,8 @@
     <p>Список докторов:</p>
     {% for doctor in doctor_list %}
     <p>
-        {{ doctor.first_name }}<br>
-        {{ doctor.last_name }}<br>
-        {{ doctor.father_name }}<br>
-        {{ doctor.specialization }}
+        <a href="{% url 'detail_doctor' pk=doctor.pk %}">{{ doctor.first_name }} {{ doctor.last_name }} {{ doctor.father_name }}</a><br>
+        <i>{{ doctor.specialization }}</i>
     </p>
     {% empty %}
     <p>

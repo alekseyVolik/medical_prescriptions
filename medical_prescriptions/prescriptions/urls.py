@@ -16,5 +16,5 @@ urlpatterns = [
     path('show/prescriptions', Prescriptions.as_view(), name='show_prescriptions'),
     path('detail/patient/<int:pk>/', DetailPatient.as_view(), name='detail_patient'),
     path('detail/doctor/<int:pk>/', DetailDoctor.as_view(), name='detail_doctor'),
-    path('detail/prescription/<int:pk>/', DetailPrescription.as_view(), name='detail_doctor'),
+    path('detail/prescription/<int:pk>/', DetailPrescription.as_view(), name='detail_prescription'),
 ]
